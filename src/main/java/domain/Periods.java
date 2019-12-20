@@ -7,7 +7,7 @@ package domain;
  * @generated
  */
 
-public class CourseProperty
+public class Periods
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ public class CourseProperty
 	 * @ordered
 	 */
 	
-	private String description;
+	private int startPoint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -43,14 +43,14 @@ public class CourseProperty
 	 * @ordered
 	 */
 	
-	private String remarks;
+	private int endPoint;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public CourseProperty(){
+	public Periods(){
 		super();
 	}
 

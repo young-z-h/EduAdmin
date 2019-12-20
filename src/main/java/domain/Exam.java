@@ -7,7 +7,7 @@ package domain;
  * @generated
  */
 
-public class Grade
+public class Exam
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -16,7 +16,16 @@ public class Grade
 	 * @ordered
 	 */
 	
-	private double mark;
+	private double score;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	private int id;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -41,7 +50,7 @@ public class Grade
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public Grade(){
+	public Exam(){
 		super();
 	}
 

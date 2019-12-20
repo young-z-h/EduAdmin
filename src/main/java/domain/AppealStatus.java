@@ -7,7 +7,7 @@ package domain;
  * @generated
  */
 
-public class SchoolHours
+public class AppealStatus
 {
 	/**
 	 * <!-- begin-user-doc -->
@@ -34,23 +34,14 @@ public class SchoolHours
 	 * @ordered
 	 */
 	
-	private int startTime;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private int endTime;
+	private String description;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
 	 */
-	public SchoolHours(){
+	public AppealStatus(){
 		super();
 	}
 

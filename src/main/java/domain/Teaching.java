@@ -25,6 +25,33 @@ public class Teaching
 	 * @ordered
 	 */
 	
+	private int id;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	private int startWeek;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	private int endWeek;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
 	public Course course;
 
 	/**
@@ -52,15 +79,6 @@ public class Teaching
 	 * @ordered
 	 */
 	
-	public TeachingBuilding teachingBuilding;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public ClassRoom classRoom;
 
 	/**
@@ -70,7 +88,7 @@ public class Teaching
 	 * @ordered
 	 */
 	
-	public SchoolHours schoolHours;
+	public Periods periods;
 
 	/**
 	 * <!-- begin-user-doc -->

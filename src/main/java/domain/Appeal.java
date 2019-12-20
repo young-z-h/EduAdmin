@@ -34,7 +34,7 @@ public class Appeal
 	 * @ordered
 	 */
 	
-	private double newMark;
+	private double newScore;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class Appeal
 	 * @ordered
 	 */
 	
-	public Grade grade;
+	public AppealStatus appealStatus;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class Appeal
 	 * @ordered
 	 */
 	
-	public Teacher teacher;
+	public Exam exam;
 
 	/**
 	 * <!-- begin-user-doc -->

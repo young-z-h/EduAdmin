@@ -40,15 +40,6 @@ public class TeachingBuilding
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
-	 * @ordered
-	 */
-	
-	public Teaching teaching;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
 	 */
 	public TeachingBuilding(){
 		super();

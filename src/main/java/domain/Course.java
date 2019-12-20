@@ -25,7 +25,7 @@ public class Course
 	 * @ordered
 	 */
 	
-	private String no;
+	private String courseNo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ public class Course
 	 * @ordered
 	 */
 	
-	private String description;
+	private String name;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,24 +53,6 @@ public class Course
 	 */
 	
 	private int credit;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private int startWeek;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private int endWeek;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,25 +88,7 @@ public class Course
 	 * @ordered
 	 */
 	
-	public CourseProperty courseProperty;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public College college;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public SchoolHours schoolHours;
 
 	/**
 	 * <!-- begin-user-doc -->
