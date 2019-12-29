@@ -21,6 +21,11 @@ public class ActorDao {
         return actorDao;
     }
 
+    /**
+     * 获得数据库中所有的Actor对象的信息
+     * @return Collection<Actor>集合
+     * @throws SQLException 操作数据库，可能出现SQLException
+     */
     public Collection<Actor> findAll()
             throws SQLException {
         actors = new HashSet<Actor>();
@@ -39,6 +44,12 @@ public class ActorDao {
         return ActorDao.actors;
     }
 
+    /**
+     * 根据参数查找Actor中id为id的对象
+     * @param id
+     * @return 返回在数据库中查找到的Actor
+     * @throws SQLException
+     */
     public Actor find(Integer id) throws SQLException {
         Actor actor = null;
         Connection connection = JdbcHelper.getConn();

@@ -22,6 +22,11 @@ public class MenuDao {
         return menuDao;
     }
 
+    /**
+     * 返回表中所有的Menu对象
+     * @return
+     * @throws SQLException
+     */
     public Collection<Menu> findAll()
             throws SQLException {
         menus = new HashSet<Menu>();
@@ -42,6 +47,12 @@ public class MenuDao {
         return MenuDao.menus;
     }
 
+    /**
+     * 根据id查询表中对应的Menu对象
+     * @param userId
+     * @return
+     * @throws SQLException
+     */
     public Menu find(Integer userId) throws SQLException {
         Menu menu = null;
         Connection connection = JdbcHelper.getConn();
@@ -61,6 +72,15 @@ public class MenuDao {
         return menu;
     }
 
+    /**
+     * 对表进行连接查询
+     * 将user,role,userroleass,menu,rolemenuass连接起来
+     * 查出user拥有的menu
+     * 返回Menu集合
+     * @param userId
+     * @return
+     * @throws SQLException
+     */
     public Collection<Menu> findByUser(Integer userId) throws SQLException {
         Collection<Menu> menus = new HashSet<>();
         Connection connection = JdbcHelper.getConn();

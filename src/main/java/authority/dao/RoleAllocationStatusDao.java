@@ -24,6 +24,14 @@ public class RoleAllocationStatusDao {
     }
 
 
+    /**
+     * 获得表中所有的Role对象
+     * 遍历Role集合
+     * 根据每个Role创建RoleAllocationStatus对象
+     * 返回RoleAllocationStatus
+     * @return 集合类对象,元素类型为RoleAllocationStatusDao
+     * @throws SQLException
+     */
     public Collection<RoleAllocationStatus> findAll()
             throws SQLException {
         roleAllocationStatusSet = new TreeSet<>();

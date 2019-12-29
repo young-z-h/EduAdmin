@@ -22,9 +22,12 @@ public class MailDao {
     public static MailDao getInstance(){
         return mailDao;
     }
-
-    public Collection<Mail> findAll()
-            throws SQLException {
+    /**
+     * 获得数据库中所有的Mail对象的信息
+     * @return Collection<Mail>集合
+     * @throws SQLException 操作数据库，可能出现SQLException
+     */
+    public Collection<Mail> findAll() throws SQLException {
         mails = new HashSet<Mail>();
         Connection connection = JdbcHelper.getConn();
         Statement stmt = connection.createStatement();
@@ -42,6 +45,12 @@ public class MailDao {
         return MailDao.mails;
     }
 
+    /**
+     * 根据参数查找Mail中id为id的对象
+     * @param userId
+     * @return 返回在数据库中查找到的Mail
+     * @throws SQLException
+     */
     public Mail find(Integer userId) throws SQLException {
         Mail mail = null;
         Connection connection = JdbcHelper.getConn();

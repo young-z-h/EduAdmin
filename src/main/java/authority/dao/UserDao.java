@@ -71,6 +71,18 @@ public class UserDao {
         return user;
     }
 
+    /**
+     * 创建一个空Role对象
+     * 创建空的Menu集合对象
+     * 创建数据库连接对象
+     * 连接查询查出user对应的role以及role对应的menu
+     * 操作result结果集对象
+     * 使用循环逐行操作结果集
+     * 获得最终对象
+     * @param user
+     * @return
+     * @throws SQLException
+     */
     public Collection<RoleMenu> findRoleMenus(User user) throws SQLException {
         Collection<RoleMenu> roleMenus = new HashSet<>();
         Role role = new Role();

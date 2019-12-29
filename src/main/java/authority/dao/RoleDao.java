@@ -46,6 +46,13 @@ public class RoleDao {
         return RoleDao.roles;
     }
 
+    /**
+     * 根据id查表中相应记录
+     * 返回结果对象
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     public Role find(Integer id) throws SQLException {
         Role role = null;
         Connection connection = JdbcHelper.getConn();

@@ -27,6 +27,26 @@ public class SimplifiedMenuAllocationDao {
         return simplifiedMenuAllocationDao;
     }
 
+    /**
+     * 传入极简的role-menu类型对象
+     * 根据发送过来的极简对象的id生成的menu集合
+     * 根据数据库中的表的menu_id记录来获得现在已经有的menu对象集合
+     * 需要从数据库中删除的menu集合--删除menu_id
+     * 需要添加到数据库中的menu集合--增加menu_id
+     * 创建数据库连接对象
+     * 取消自动提交
+     * 获得role-menu对象的menuIds
+     * 该链接上执行查询语句，获得role自己的menus
+     * 添加到对比用的menus集合中
+     * 求对应两个差集（应该添加的menus、以及需要删除的menus）
+     * 根据要删除的menus在数据库中删除
+     * 根据要添加的menus在数据库中增加
+     * 提交
+     * 设置自动提交
+     * 返回是否执行成功
+     * @param sma
+     * @return
+     */
     public boolean alterMenu(SimplifiedMenuAllocation sma){
         System.out.println(sma.toString());
         boolean affectedRowNum = false;
@@ -39,12 +59,10 @@ public class SimplifiedMenuAllocationDao {
         /*根据数据库中的表的menu_id记录来获得现在已经有的menu对象集合(comparedMenus---来自数据库)*/
         Collection<Menu> comparedMenus = new TreeSet<>();
 
-
         /*需要从数据库中删除的menu集合--删除menu_id*/
         Collection<Menu> removeMenus = new TreeSet<>();
         /*需要添加到数据库中的menu集合--增加menu_id*/
         Collection<Menu> addMenus = new TreeSet<>();
-
 
         try{
             connection = JdbcHelper.getConn();

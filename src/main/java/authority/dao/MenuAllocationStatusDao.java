@@ -23,7 +23,10 @@ public class MenuAllocationStatusDao {
     }
 
     /**
-     * 返回MenuAllocationStatusDao表中的所有对象
+     * 返回表中所有的Menu对象
+     * 遍历Menu集合
+     * 根据每个Menu创建MenuAllocationStatus对象
+     * 返回MenuAllocationStatus
      * @return 集合类对象,元素类型为MenuAllocationStatusDao
      * @throws SQLException
      */

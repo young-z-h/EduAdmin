@@ -24,6 +24,12 @@ public class RoleMenuAssDao {
     }
 
 
+    /**
+     * 查询rolemenuass表
+     * 返回对应RoleMenuAss对象
+     * @return
+     * @throws SQLException
+     */
     public Collection<RoleMenuAss> findAll()
             throws SQLException {
         userRoleAsss = new HashSet<>();

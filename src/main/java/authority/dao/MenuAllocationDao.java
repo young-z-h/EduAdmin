@@ -30,36 +30,47 @@ public class MenuAllocationDao {
         return menuAllocationDao;
     }
 
+    /**
+     * 令目标集合指向一个空TreeSet集合
+     * 获得所有的Role放入一个集合中
+     * 模拟id赋值
+     * 遍历这个role集合
+     * 对遍历的每个Role都使用getFullMenuStatus()方法
+     * 将修改完成的集合再依次放入返回的集合menuAllocations中
+     * @return
+     * @throws SQLException
+     */
     public Collection<MenuAllocation> findAll()
             throws SQLException {
         menuAllocations = new TreeSet<>();
-
-
 
         Collection<Role> roles = RoleService.getInstance().findAll();
 
         int counter = 0;
 
         for (Role role:roles){
-//            MenuAllocationService.getInstance().setAllAllocated(menuAllocationStatusSet);
-
             Collection<MenuAllocationStatus> newR
                     = MenuAllocationService.getInstance().getFullMenuStatus(role);
 
             MenuAllocation menuAllocation = new MenuAllocation(
                     ++counter, newR,role
             );
-
-//            System.out.println(JSONObject.toJSONString(menuAllocation));
-
             menuAllocations.add(menuAllocation);
         }
-
-//        System.out.println(JSONObject.toJSONString(menuAllocations, SerializerFeature.DisableCircularReferenceDetect));
-
         return menuAllocations;
     }
 
+    /**
+     * 先获得所有的MenuAllocationStatusStatus对象
+     * 全部allocated字段的值都为false
+     * 通过rolemenuass查找role对应的所有已有的menu
+     * 根据查找到的已有的menu,操作MenuAllocationStatusStatus集合
+     * 将该role拥有的menu的MenuAllocationStatusStatus对象的allocated字段赋值true
+     * 然后返回这个role对应的MenuAllocationStatusStatus集合
+     * @param role
+     * @return
+     * @throws SQLException
+     */
     public Collection<MenuAllocationStatus> getFullMenuStatus(
             Role role) throws SQLException {
         Collection<MenuAllocationStatus> menuAllocationStatusSet

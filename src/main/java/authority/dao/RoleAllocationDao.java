@@ -41,37 +41,26 @@ public class RoleAllocationDao {
      */
     public Collection<RoleAllocation> findAll()
             throws SQLException {
-
         roleAllocations = new TreeSet<>();
-
         Collection<User> users = UserService.getInstance().findAll();
-
         int counter = 0;
-
         for (User user:users){
-//            RoleAllocationService.getInstance()
-//                    .setAllAllocated();
-
             Collection<RoleAllocationStatus> newR
                     = RoleAllocationService.getInstance().getFullRoleStatus(user);
-
             RoleAllocation roleAllocation = new RoleAllocation(
                     ++counter,newR,user
             );
-
             System.out.println(JSONObject.toJSONString(roleAllocation));
-
             roleAllocations.add(roleAllocation);
         }
-
         System.out.println(JSONObject.toJSONString(roleAllocations, SerializerFeature.DisableCircularReferenceDetect));
-
         return roleAllocations;
     }
 
 
     /**
-     * 传入user对象，返回对应这个user对象的roleAllocation对象
+     * 传入user对象
+     * 返回对应这个user对象的roleAllocation对象
      * @param user
      * @return
      * @throws SQLException
@@ -89,7 +78,17 @@ public class RoleAllocationDao {
         return this.find(UserService.getInstance().find(id));
     }
 
-
+    /**
+     * 先获得所有的RoleAllocationStatusStatus对象
+     * 全部allocated字段的值都为false
+     * 通过userroleass查找user对应的所有已有的role
+     * 根据查找到的已有的role,操作RoleAllocationStatusStatus集合
+     * 将该user拥有的role的RoleAllocationStatusStatus对象的allocated字段赋值true
+     * 然后返回这个user对应的RoleAllocationStatusStatus集合
+     * @param user
+     * @return
+     * @throws SQLException
+     */
     public Collection<RoleAllocationStatus> getFullRoleStatus(User user)
             throws SQLException {
 

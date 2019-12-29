@@ -23,7 +23,12 @@ public class UserRoleAssDao {
         return userRoleAssDao;
     }
 
-
+    /**
+     * 查询userRoleAss表
+     * 返回对应UserRoleAss对象
+     * @return
+     * @throws SQLException
+     */
     public Collection<UserRoleAss> findAll()
             throws SQLException {
         userRoleAsss = new HashSet<>();
@@ -43,6 +48,13 @@ public class UserRoleAssDao {
         return userRoleAsss;
     }
 
+    /**
+     * 根据id查表中相应记录
+     * 返回结果对象
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     public UserRoleAss find(Integer id) throws SQLException {
         UserRoleAss userRoleAss = null;
         Connection connection = JdbcHelper.getConn();
